@@ -1,0 +1,12 @@
+<html>
+    <h4><b>Add employee</b></h4>
+    <form>
+        <label>Employee id</label>
+        <input type="text"name="eid" [(ngModel)]="model.eid"/><br/>
+        <label>Employee name</label>
+        <input type="text" name="ename" [(ngModel)]="model.ename"/><br/>
+        <label>Employee salary</label>
+        <input type="text" name="esalary" [(ngModel)]="model.esalary"/><br/>
+        <input type="button" value="Add Employee" (click)="addEmployee()"/>
+    </form>
+</html>
