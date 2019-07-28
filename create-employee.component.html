@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Add Employee</h2>
+    <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+        <div class="form-group">
+            <label>Employee Id</label>
+            <input required pattern="[0-9]{4}" #idRef='ngModel' type="text" name="id" ngModel class="form-control">
+           <div *ngIf='idRef.errors && idRef.touched' class="alert alert-danger">
+              <div [hidden]='!idRef.errors.required' >please enter a id</div>
+            <div [hidden]='!idRef.errors.pattern'>id should be of 4 digits</div>
+           </div>
+       </div>
+        <div class="form-group">
+            <label>Employee Name</label>
+            <input required pattern="[A-Z][A-Za-z]{3,10}" #nameRef='ngModel' type="text" name="name" ngModel class="form-control">
+            <div *ngIf='nameRef.errors && nameRef.touched' class="alert alert-danger">
+            <div [hidden]='!nameRef.errors.required'>please enter a Name</div>
+            <div [hidden]='!nameRef.errors.pattern'>name should start with capital and  be minimum of 4 characters</div>
+        </div>
+        </div>
+        <div class="form-group">
+            <label>Employee Gender</label>
+            <input required  type="text" #genderRef='ngModel' name="gender" ngModel class="form-control">
+            <div *ngIf='genderRef.errors && genderRef.touched' class="alert alert-danger">
+                    <div [hidden]='!genderRef.errors.required'>please enter gender</div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Employee Age</label>
+            <input required pattern="[1-9][0-9]{1}" type="text" #ageRef="ngModel" name="age" ngModel class="form-control">
+            <div *ngIf='ageRef.errors && ageRef.touched' class="alert alert-danger">
+                <div [hidden]='!ageRef.errors.required'>please enter age</div>
+                <div [hidden]='!ageRef.errors.pattern'>id should be of 2 digits</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Employee Salary</label>
+            <input required type="text" #salaryRef="ngModel" name="salary" ngModel class="form-control">
+            <div *ngIf='salaryRef.errors && salaryRef.touched'>
+                    <div [hidden]='!salaryRef.errors.required'>please enter gender</div>
+    
+            </div>
+        </div>
+        <button class="btn btn-primary">Add Employee</button>
+    </form>
+</div>

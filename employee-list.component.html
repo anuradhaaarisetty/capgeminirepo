@@ -1,0 +1,23 @@
+<div class="container">
+    <form>    <h2>Employee Details</h2>
+    <table class="table table-border">
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>salary</th>
+        </tr>
+        <tr *ngFor='let employee of employees'>
+            <td><!-- <a [routerLink]="['/employees',emp.id]"> -->{{employee.id}}<!-- </a> --></td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.salary}}</td>
+            <td><button (click)="Delete(employee)">Delete</button></td>
+ 
+        </tr>
+    </table>
+</form>
+
+</div>
